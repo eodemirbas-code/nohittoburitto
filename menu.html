@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Nohitto Buritto | Menü</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="nb-header">
+    <div class="nb-container nb-header-inner">
+      <a href="index.html" class="nb-logo">
+        <img src="assets/nohitto-logo.png" alt="Nohitto Buritto Logo" />
+        <span>Nohitto Buritto</span>
+      </a>
+      <nav class="nb-nav">
+        <a href="index.html">Ana Sayfa</a>
+        <a href="menu.html" class="active">Menü</a>
+        <a href="iletisim.html">İletişim</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="nb-section">
+      <div class="nb-container">
+        <div class="nb-section-header">
+          <h1>Menü</h1>
+          <p>Nohutun başrolde olduğu funky menü.</p>
+        </div>
+
+        <div class="nb-menu-grid">
+          <div class="nb-menu-card">
+            <h3>Nohitto Classic</h3>
+            <p class="nb-menu-desc">
+              Zeytinyağlı nohut, hafif sos, çıtır sebzeler ve özel lavaş.
+            </p>
+            <p class="nb-menu-tag">Günlük hazırlanır</p>
+            <p class="nb-menu-price">₺ —</p>
+          </div>
+
+          <div class="nb-menu-card">
+            <h3>Nohitto Acılı Funk</h3>
+            <p class="nb-menu-desc">
+              Baharatlı nohut, acı sos, roka, turşu dokunuşu ve funky lezzet.
+            </p>
+            <p class="nb-menu-tag">Acı severlere</p>
+            <p class="nb-menu-price">₺ —</p>
+          </div>
+
+          <div class="nb-menu-card">
+            <h3>Nohitto BBQ</h3>
+            <p class="nb-menu-desc">
+              Hafif füme aromalı sos, karamelize soğan, nohut ve lavaş buluşması.
+            </p>
+            <p class="nb-menu-tag">Sınırlı dönem</p>
+            <p class="nb-menu-price">₺ —</p>
+          </div>
+
+          <div class="nb-menu-card">
+            <h3>Cool Me Cup (İçecek)</h3>
+            <p class="nb-menu-desc">
+              İçeceğini soğuk tutan özel bardak + seçtiğin içecek kombinasyonu.
+            </p>
+            <p class="nb-menu-tag">Ekstra havalı</p>
+            <p class="nb-menu-price">₺ —</p>
+          </div>
+        </div>
+
+        <p class="nb-note">
+          * Fiyatlar ve ürünler şube ve kampanyalara göre değişiklik gösterebilir.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="nb-footer">
+    <div class="nb-container">
+      <p>© <span id="year"></span> Nohitto Buritto. Tüm hakları saklıdır.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Nohitto Buritto | İletişim</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="nb-header">
+    <div class="nb-container nb-header-inner">
+      <a href="index.html" class="nb-logo">
+        <img src="assets/nohitto-logo.png" alt="Nohitto Buritto Logo" />
+        <span>Nohitto Buritto</span>
+      </a>
+      <nav class="nb-nav">
+        <a href="index.html">Ana Sayfa</a>
+        <a href="menu.html">Menü</a>
+        <a href="iletisim.html" class="active">İletişim</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="nb-section">
+      <div class="nb-container nb-contact-layout">
+        <div>
+          <div class="nb-section-header nb-section-header-left">
+            <h1>İletişim</h1>
+            <p>Sorun, önerin, işbirliği fikrin varsa hemen yaz.</p>
+          </div>
+
+          <div class="nb-contact-info">
+            <p><strong>Adres:</strong> (Buraya şube / mutfak adresi)</p>
+            <p><strong>Telefon:</strong> <a href="tel:+90XXXXXXXXXX">+90 (___) ___ __ __</a></p>
+            <p><strong>E-posta:</strong> <a href="mailto:info@nohittoburitto.com">info@nohittoburitto.com</a></p>
+            <p><strong>Instagram:</strong> <a href="https://www.instagram.com/nohittoburitto" target="_blank">@nohittoburitto</a></p>
+          </div>
+        </div>
+
+        <div>
+          <form class="nb-form" action="mailto:info@nohittoburitto.com" method="post" enctype="text/plain">
+            <label>
+              Ad Soyad
+              <input type="text" name="ad" required />
+            </label>
+            <label>
+              E-posta
+              <input type="email" name="email" required />
+            </label>
+            <label>
+              Mesajın
+              <textarea name="mesaj" rows="5" required></textarea>
+            </label>
+            <button type="submit" class="nb-btn">Gönder</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="nb-footer">
+    <div class="nb-container">
+      <p>© <span id="year"></span> Nohitto Buritto. Tüm hakları saklıdır.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

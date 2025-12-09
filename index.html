@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Nohitto Buritto | Ana Sayfa</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="nb-header">
+    <div class="nb-container nb-header-inner">
+      <a href="index.html" class="nb-logo">
+        <!-- Logo dosyanın adını kendi dosyana göre değiştir -->
+        <img src="assets/nohitto-logo.png" alt="Nohitto Buritto Logo" />
+        <span>Nohitto Buritto</span>
+      </a>
+      <nav class="nb-nav">
+        <a href="index.html" class="active">Ana Sayfa</a>
+        <a href="menu.html">Menü</a>
+        <a href="iletisim.html">İletişim</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="nb-hero">
+      <div class="nb-container nb-hero-inner">
+        <div class="nb-hero-text">
+          <h1>Nohutun en havalı hali.</h1>
+          <p>
+            Retro mutfak ruhu, funky dokunuşlar ve sokak lezzeti.  
+            Nohitto Buritto, nohutu dürümle tanıştıran yeni nesil chickpea wrap deneyimi.
+          </p>
+          <div class="nb-hero-actions">
+            <a href="menu.html" class="nb-btn">Menüyü Gör</a>
+            <a href="https://www.instagram.com/nohittoburitto" target="_blank" class="nb-link">
+              Instagram'da Takip Et
+            </a>
+          </div>
+        </div>
+        <div class="nb-hero-image">
+          <!-- Buraya görsel ekleyebilirsin -->
+          <div class="nb-hero-placeholder">
+            LOGO / ÜRÜN GÖRSELİ
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INSTAGRAM GRID -->
+    <section class="nb-section">
+      <div class="nb-container">
+        <div class="nb-section-header">
+          <h2>Instagram'dan En Taze Kareler</h2>
+          <p>@nohittoburitto hesabından son paylaşımlar</p>
+        </div>
+
+        <div class="nb-instagram-grid">
+          <!-- 
+            Buradaki kutular tamamen placeholder.
+            Gerçek post eklemek için:
+            - <a href="https://www.instagram.com/p/POSTKODU" target="_blank"> gibi link ver
+            veya
+            - Instagram embed kodunu buradaki div’in içine yapıştır.
+          -->
+
+          <a href="https://www.instagram.com/nohittoburitto" target="_blank" class="nb-ig-card">
+            <div class="nb-ig-thumb">Post #1</div>
+            <div class="nb-ig-caption">
+              Açılışa geri sayım 🔥
+            </div>
+          </a>
+
+          <a href="https://www.instagram.com/nohittoburitto" target="_blank" class="nb-ig-card">
+            <div class="nb-ig-thumb">Post #2</div>
+            <div class="nb-ig-caption">
+              Nohut + dürüm = 💛
+            </div>
+          </a>
+
+          <a href="https://www.instagram.com/nohittoburitto" target="_blank" class="nb-ig-card">
+            <div class="nb-ig-thumb">Post #3</div>
+            <div class="nb-ig-caption">
+              Retro mutfakta buluşalım.
+            </div>
+          </a>
+
+          <a href="https://www.instagram.com/nohittoburitto" target="_blank" class="nb-ig-card">
+            <div class="nb-ig-thumb">Post #4</div>
+            <div class="nb-ig-caption">
+              Nohutun en havalı hali burada.
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="nb-footer">
+    <div class="nb-container">
+      <p>© <span id="year"></span> Nohitto Buritto. Tüm hakları saklıdır.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Yıl otomatik
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

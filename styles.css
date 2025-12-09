@@ -6,7 +6,7 @@ html {
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-color: #ffff; /* koyu yeşil arka plan */
+  background-color: #1F6B4A; /* koyu yeşil arka plan */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -32,7 +32,7 @@ body {
 }
 
 .nb-nav {
-  margin-top: 10px;
+  margin-top: 200px;
 }
 
 .nb-nav a {
@@ -45,7 +45,7 @@ body {
 
 .nb-nav a:hover,
 .nb-nav a.active {
-  color: #fff;
+  color: #1F6B4A;
   background-color: #1F6B4A;
   padding: 4px 8px;
   border-radius: 8px;
@@ -172,7 +172,7 @@ p {
 /* ----------------------------------- */
 
 .nb-footer {
-  background-color: #1F6B4A;
+  background-color: #ffff;
   padding: 40px 10px;
   text-align: center;
   color: #EDD8A0;

@@ -3,85 +3,331 @@
 <head>
   <meta charset="UTF-8" />
   <title>Nohitto Buritto | Menü</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="styles.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    :root {
+      --nh-red: #C72831;
+      --nh-green: #1F6B4A;
+      --nh-cream: #EDD8A0;
+      --nh-dark: #1a1a1a;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: var(--nh-green);
+      color: var(--nh-cream);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* HEADER */
+    header {
+      background-color: var(--nh-red);
+      color: var(--nh-cream);
+      padding: 20px;
+      text-align: center;
+      border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+    }
+
+    header .logo {
+      max-width: 220px;
+      display: block;
+      margin: 0 auto 10px auto;
+      border-radius: 24px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 28px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    header p {
+      margin: 5px 0 0;
+      font-size: 14px;
+      opacity: 0.9;
+    }
+
+    nav {
+      margin-top: 15px;
+      font-size: 14px;
+    }
+
+    nav a {
+      color: var(--nh-cream);
+      text-decoration: none;
+      margin: 0 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      padding-bottom: 2px;
+      border-bottom: 1px solid transparent;
+    }
+
+    nav a:hover {
+      border-color: var(--nh-cream);
+    }
+
+    /* MAIN */
+    main {
+      flex: 1;
+      padding: 30px 15px 40px;
+      max-width: 1100px;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    .menu-intro {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    .menu-category {
+      background-color: var(--nh-cream);
+      color: var(--nh-dark);
+      border-radius: 18px;
+      padding: 18px 18px 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
+    }
+
+    .menu-category h2 {
+      margin: 0 0 10px 0;
+      font-size: 18px;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: var(--nh-red);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+      padding-bottom: 6px;
+    }
+
+    .menu-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 6px 0;
+      border-bottom: 1px dashed rgba(0, 0, 0, 0.1);
+      font-size: 14px;
+    }
+
+    .menu-item:last-child {
+      border-bottom: none;
+    }
+
+    .menu-item-name {
+      font-weight: 600;
+      max-width: 70%;
+    }
+
+    .menu-item-price {
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .currency {
+      font-size: 12px;
+      opacity: 0.8;
+      margin-right: 2px;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 11px;
+      color: rgba(255, 255, 255, 0.75);
+      padding: 10px 15px 15px;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 22px;
+      }
+      .menu-category {
+        padding: 16px;
+      }
+    }
+  </style>
 </head>
 <body>
-  <header class="nb-header">
-    <div class="nb-container nb-header-inner">
-      <a href="index.html" class="nb-logo">
-        <img src="assets/nohitto-logo.png" alt="Nohitto Buritto Logo" />
-        <span>Nohitto Buritto</span>
-      </a>
-      <nav class="nb-nav">
-        <a href="index.html">Ana Sayfa</a>
-        <a href="menu.html" class="active">Menü</a>
-        <a href="iletisim.html">İletişim</a>
-      </nav>
-    </div>
+  <header>
+    <!-- LOGO: buraya Nohitto Buritto logo dosyanın yolunu koy -->
+    <!-- <img src="assets/nohitto-logo.png" alt="Nohitto Buritto" class="logo" /> -->
+    <h1>Nohitto Buritto</h1>
+    <p>Nohutun en havalı hali – Menü</p>
+    <nav>
+      <a href="#atistirmaliklar">Atıştırmalıklar</a>
+      <a href="#anayemekler">Ana Yemekler</a>
+      <a href="#tatlilar">Tatlılar</a>
+      <a href="#icecekler">İçecekler</a>
+    </nav>
   </header>
 
   <main>
-    <section class="nb-section">
-      <div class="nb-container">
-        <div class="nb-section-header">
-          <h1>Menü</h1>
-          <p>Nohutun başrolde olduğu funky menü.</p>
+    <section class="menu-intro">
+      Nohitto Buritto mutfağında; sokak lezzetleri, nohut tabanlı spesiyaller ve
+      paylaşmalık tabaklar sunuyoruz. Aşağıda güncel menümüzü bulabilirsiniz.
+      Fiyatlar Türk Lirası (₺) üzerinden belirtilmiştir.
+    </section>
+
+    <section class="menu-grid">
+
+      <!-- ATISTIRMALIKLAR -->
+      <article class="menu-category" id="atistirmaliklar">
+        <h2>Atıştırmalıklar</h2>
+
+        <div class="menu-item">
+          <span class="menu-item-name">Patates Kızartma Sade</span>
+          <span class="menu-item-price"><span class="currency">₺</span>150,00</span>
         </div>
 
-        <div class="nb-menu-grid">
-          <div class="nb-menu-card">
-            <h3>Nohitto Classic</h3>
-            <p class="nb-menu-desc">
-              Zeytinyağlı nohut, hafif sos, çıtır sebzeler ve özel lavaş.
-            </p>
-            <p class="nb-menu-tag">Günlük hazırlanır</p>
-            <p class="nb-menu-price">₺ —</p>
-          </div>
-
-          <div class="nb-menu-card">
-            <h3>Nohitto Acılı Funk</h3>
-            <p class="nb-menu-desc">
-              Baharatlı nohut, acı sos, roka, turşu dokunuşu ve funky lezzet.
-            </p>
-            <p class="nb-menu-tag">Acı severlere</p>
-            <p class="nb-menu-price">₺ —</p>
-          </div>
-
-          <div class="nb-menu-card">
-            <h3>Nohitto BBQ</h3>
-            <p class="nb-menu-desc">
-              Hafif füme aromalı sos, karamelize soğan, nohut ve lavaş buluşması.
-            </p>
-            <p class="nb-menu-tag">Sınırlı dönem</p>
-            <p class="nb-menu-price">₺ —</p>
-          </div>
-
-          <div class="nb-menu-card">
-            <h3>Cool Me Cup (İçecek)</h3>
-            <p class="nb-menu-desc">
-              İçeceğini soğuk tutan özel bardak + seçtiğin içecek kombinasyonu.
-            </p>
-            <p class="nb-menu-tag">Ekstra havalı</p>
-            <p class="nb-menu-price">₺ —</p>
-          </div>
+        <div class="menu-item">
+          <span class="menu-item-name">Patates Kızartma Trüf / Parmesan</span>
+          <span class="menu-item-price"><span class="currency">₺</span>175,00</span>
         </div>
 
-        <p class="nb-note">
-          * Fiyatlar ve ürünler şube ve kampanyalara göre değişiklik gösterebilir.
-        </p>
-      </div>
+        <div class="menu-item">
+          <span class="menu-item-name">Patates Kızartma Duman Ezme / Sour Cream</span>
+          <span class="menu-item-price"><span class="currency">₺</span>185,00</span>
+        </div>
+
+        <div class="menu-item">
+          <span class="menu-item-name">Patates Kızartma Guacamole</span>
+          <span class="menu-item-price"><span class="currency">₺</span>180,00</span>
+        </div>
+
+        <div class="menu-item">
+          <span class="menu-item-name">Coxinha Tavuklu</span>
+          <span class="menu-item-price"><span class="currency">₺</span>220,00</span>
+        </div>
+
+        <div class="menu-item">
+          <span class="menu-item-name">Coxinha Kıymalı</span>
+          <span class="menu-item-price"><span class="currency">₺</span>240,00</span>
+        </div>
+
+        <div class="menu-item">
+          <span class="menu-item-name">Coxinha Kokoreçli</span>
+          <span class="menu-item-price"><span class="currency">₺</span>250,00</span>
+        </div>
+      </article>
+
+      <!-- ANA YEMEKLER -->
+      <article class="menu-category" id="anayemekler">
+        <h2>Ana Yemekler</h2>
+
+        <div class="menu-item">
+          <span class="menu-item-name">Texas Buritto Çıtır</span>
+          <span class="menu-item-price"><span class="currency">₺</span>350,00</span>
+        </div>
+
+        <div class="menu-item">
+          <span class="menu-item-name">Çıtır Tavuk</span>
+          <span class="menu-item-price"><span class="currency">₺</span>240,00</span>
+        </div>
+
+        <div class="menu-item">
+          <span class="menu-item-name">Nohitto Klasik</span>
+          <span class="menu-item-price"><span class="currency">₺</span>240,00</span>
+        </div>
+
+        <div class="menu-item">
+          <span class="menu-item-name">Nohitto Adana</span>
+          <span class="menu-item-price"><span class="currency">₺</span>250,00</span>
+        </div>
+
+        <div class="menu-item">
+          <span class="menu-item-name">Nohitto Smoky</span>
+          <span class="menu-item-price"><span class="currency">₺</span>260,00</span>
+        </div>
+
+        <div class="menu-item">
+          <span class="menu-item-name">Buritto</span>
+          <span class="menu-item-price"><span class="currency">₺</span>460,00</span>
+        </div>
+
+        <div class="menu-item">
+          <span class="menu-item-name">Servis Brisket</span>
+          <span class="menu-item-price"><span class="currency">₺</span>460,00</span>
+        </div>
+      </article>
+
+      <!-- TATLILAR -->
+      <article class="menu-category" id="tatlilar">
+        <h2>Tatlılar</h2>
+
+        <div class="menu-item">
+          <span class="menu-item-name">Fransız Duplex Sütlaç</span>
+          <span class="menu-item-price"><span class="currency">₺</span>160,00</span>
+        </div>
+
+        <div class="menu-item">
+          <span class="menu-item-name">Acı Sufle</span>
+          <span class="menu-item-price"><span class="currency">₺</span>160,00</span>
+        </div>
+      </article>
+
+      <!-- İÇECEKLER -->
+      <article class="menu-category" id="icecekler">
+        <h2>İçecekler</h2>
+
+        <div class="menu-item">
+          <span class="menu-item-name">Meşrubat</span>
+          <span class="menu-item-price"><span class="currency">₺</span>80,00</span>
+        </div>
+
+        <div class="menu-item">
+          <span class="menu-item-name">Su</span>
+          <span class="menu-item-price"><span class="currency">₺</span>30,00</span>
+        </div>
+
+        <div class="menu-item">
+          <span class="menu-item-name">Soda</span>
+          <span class="menu-item-price"><span class="currency">₺</span>35,00</span>
+        </div>
+
+        <div class="menu-item">
+          <span class="menu-item-name">Kahve</span>
+          <span class="menu-item-price"><span class="currency">₺</span>75,00</span>
+        </div>
+
+        <div class="menu-item">
+          <span class="menu-item-name">Çay</span>
+          <span class="menu-item-price"><span class="currency">₺</span>75,00</span>
+        </div>
+
+        <div class="menu-item">
+          <span class="menu-item-name">Bira</span>
+          <span class="menu-item-price"><span class="currency">₺</span>150,00</span>
+        </div>
+
+        <div class="menu-item">
+          <span class="menu-item-name">Şarap</span>
+          <span class="menu-item-price"><span class="currency">₺</span>150,00</span>
+        </div>
+      </article>
+
     </section>
   </main>
 
-  <footer class="nb-footer">
-    <div class="nb-container">
-      <p>© <span id="year"></span> Nohitto Buritto. Tüm hakları saklıdır.</p>
-    </div>
+  <footer>
+    Nohitto Buritto · Fiyatlar bilgilendirme amaçlıdır, restoranımız güncel fiyatları değiştirme hakkını saklı tutar.
   </footer>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>

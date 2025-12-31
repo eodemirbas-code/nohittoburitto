@@ -9,21 +9,24 @@ body{
   flex-direction: column;
 }
 
-/* ÜST KIRMIZI ŞERİT (HEADER) */
+/* =========================
+   HEADER
+   ========================= */
 header{
   background-color: #C72831; /* Kırmızı */
   color: #EDD8A0;            /* Krem */
-  padding: 20px;
+  padding: 28px 20px 24px;   /* biraz büyüttük */
   text-align: center;
   border-bottom: 1px solid #ddd;
 }
 
+/* 🔴 LOGO BÜYÜTÜLDÜ */
 header img{
-  width: 200px;
-  max-width: 90vw;          /* Mobil taşmayı engeller */
-  border-radius: 24px;
+  width: 260px;              /* eskisi 200px */
+  max-width: 90vw;
+  border-radius: 28px;
   display: block;
-  margin: 0 auto 10px;
+  margin: 0 auto 14px;
 }
 
 nav{
@@ -32,11 +35,11 @@ nav{
 
 nav a{
   color: #EDD8A0;
-  margin: 0 15px;
+  margin: 0 16px;
   text-decoration: none;
   font-size: 18px;
   font-weight: bold;
-  display: inline-block;     /* hover padding düzgün dursun */
+  display: inline-block;
 }
 
 nav a:hover{
@@ -46,7 +49,9 @@ nav a:hover{
   border-radius: 8px;
 }
 
-/* ORTA BEYAZ KUTU (İÇERİK ALANI) */
+/* =========================
+   ORTA BEYAZ KUTU
+   ========================= */
 .content-wrapper{
   background-color: #ffffff;
   flex: 1;
@@ -54,15 +59,16 @@ nav a:hover{
   justify-content: center;
 }
 
+/* ⬇️ BEYAZ ALAN DARALTILDI */
 main{
   width: 100%;
-  max-width: 900px;
-  padding: 20px 15px 30px;
+  max-width: 760px;          /* eskisi 900px */
+  padding: 22px 16px 32px;
 }
 
 h1, h2{
   color: #C72831;
-  margin: 10px 0;
+  margin: 12px 0;
 }
 
 p, li{
@@ -79,52 +85,92 @@ a:hover{
   text-decoration: underline;
 }
 
-/* INSTAGRAM GRID (INDEX) */
+/* =========================
+   INSTAGRAM GRID
+   ========================= */
 .ig-grid{
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 16px;
-  margin-top: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px;
+  margin-top: 12px;
 }
 
+/* 🔴 Instagram postu için DIŞ ÇERÇEVE */
 .ig-card{
   border: 2px solid #C72831;
-  border-radius: 12px;
+  border-radius: 14px;
   padding: 10px;
+  background: #fff;
 }
 
-/* MENÜ GÖRSELİ */
+/* 🔧 Instagram embed’in kendi ölçülerini bastır */
+.ig-card blockquote.instagram-media{
+  margin: 0 !important;
+  width: 100% !important;
+  min-width: 0 !important;
+}
+
+/* Instagram iframe tam sarsın */
+.ig-card iframe{
+  width: 100% !important;
+  border-radius: 10px;
+}
+
+/* =========================
+   MENÜ GÖRSELİ
+   ========================= */
 .menu-img{
   width: 100%;
-  max-width: 900px;
+  max-width: 760px;          /* beyaz alanla uyumlu */
   border: 2px solid #C72831;
-  border-radius: 12px;
+  border-radius: 14px;
   display: block;
-  margin: 10px auto 0;
+  margin: 12px auto 0;
 }
 
-/* İLETİŞİM QR */
+/* =========================
+   İLETİŞİM QR
+   ========================= */
 .qr{
-  width: min(360px, 100%);
+  width: min(340px, 100%);
   border: 2px solid #C72831;
-  border-radius: 12px;
+  border-radius: 14px;
   display: block;
-  margin: 10px 0 0;
+  margin: 12px 0 0;
 }
 
-/* ALT YEŞİL ŞERİT (FOOTER) */
+/* =========================
+   FOOTER
+   ========================= */
 footer{
   text-align: center;
   font-size: 14px;
   color: #EDD8A0;
   background-color: #1F6B4A;
-  padding: 40px 10px 20px;
+  padding: 36px 10px 22px;
 }
 
-/* MOBİL */
+/* =========================
+   MOBİL
+   ========================= */
 @media (max-width: 600px){
-  header img{ width: 140px; }
-  nav a{ font-size: 16px; margin: 0 8px; }
-  main{ padding: 20px 10px; }
-  h1, h2{ text-align: center; }
+
+  /* Logo mobilde de büyük ama taşmaz */
+  header img{
+    width: 180px;
+  }
+
+  nav a{
+    font-size: 16px;
+    margin: 0 8px;
+  }
+
+  main{
+    max-width: 92%;          /* mobilde kenarlardan nefes */
+    padding: 20px 10px;
+  }
+
+  h1, h2{
+    text-align: center;
+  }
 }

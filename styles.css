@@ -20,7 +20,7 @@ header{
 
 header img{
   width:200px;
-  border-radius:24px;
+  border-radius:124px;
   display:block;
   margin:0 auto 10px;
 }
@@ -52,7 +52,7 @@ nav a:hover{
 
 main{
   width:100%;
-  max-width:900px;
+  max-width:300px;
   padding:20px 15px 30px;
 }
 
@@ -75,8 +75,8 @@ p,li{
 
 .ig-card{
   border:2px solid #C72831;
-  border-radius:12px;
-  padding:12px;
+  border-radius:6px;
+  padding:6px;
 }
 
 .ig-card a{
@@ -106,12 +106,12 @@ footer{
   font-size:14px;
   color:#EDD8A0;
   background-color:#1F6B4A;
-  padding:40px 10px 20px;
+  padding:80px 20px 40px;
 }
 
 /* Mobil */
-@media (max-width:600px){
-  header img{ width:140px; }
+@media (max-width:300px){
+  header img{ width:700px; }
   nav a{ font-size:16px; margin:0 8px; }
   main{ padding:20px 10px; }
   h1,h2{ text-align:center; }

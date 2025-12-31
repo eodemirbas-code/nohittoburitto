@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Nohitto Buritto | Ana Sayfa</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header>
+  <img src="nohitto-logo.png" alt="Nohitto Buritto Logo">
+  <nav>
+    <a href="index.html">Ana Sayfa</a>
+    <a href="menu.html">Menü</a>
+    <a href="iletisim.html">İletişim</a>
+  </nav>
+</header>
+
+<div class="content-wrapper">
+  <main>
+    <h1>Nohutun en havalı hali.</h1>
+    <p>
+      Instagram: <a href="https://www.instagram.com/nohitto_buritto/" target="_blank">@nohitto_buritto</a>
+    </p>
+
+    <h2>Instagram QR</h2>
+    <p>Telefonla okut, direkt profile git.</p>
+    <img class="qr" src="instagram-qr.png" alt="Nohitto Buritto Instagram QR">
+
+    <h2>Son Paylaşımlar</h2>
+    <p>
+      Aşağıya post linklerini yazınca otomatik embed eder. (En stabil yöntem.)
+    </p>
+
+    <div class="ig-grid" id="igEmbeds">
+      <!-- Embedler JS ile üretilecek -->
+    </div>
+
+    <!-- Instagram Embed JS (public embed için) -->
+    <script async src="https://www.instagram.com/embed.js"></script>
+
+    <script>
+      // Buraya IG post linklerini ekle (örnek format):
+      // "https://www.instagram.com/p/POSTKODU/"
+      const postUrls = [
+        // "https://www.instagram.com/p/XXXXXXXXX/",
+        // "https://www.instagram.com/p/YYYYYYYYY/"
+      ];
+
+      const container = document.getElementById("igEmbeds");
+
+      if (postUrls.length === 0) {
+        container.innerHTML = `
+          <div class="ig-card">
+            <p>Henüz post linki eklenmedi. İstersen 6–12 adet post URL’si gönder, ben ekleyeyim.</p>
+            <p><a target="_blank" href="https://www.instagram.com/nohitto_buritto/">Instagram profiline git</a></p>
+          </div>
+        `;
+      } else {
+        postUrls.forEach(url => {
+          const card = document.createElement("div");
+          card.className = "ig-card";
+          card.innerHTML = `
+            <blockquote class="instagram-media"
+              data-instgrm-permalink="${url}"
+              data-instgrm-version="14"
+              style="background:#fff; border:0; margin:0; padding:0; width:100%;">
+            </blockquote>
+            <p><a target="_blank" href="${url}">Postu Instagram’da aç</a></p>
+          `;
+          container.appendChild(card);
+        });
+
+        // Embed script bazen DOM sonrası yeniden işlenmeli
+        window.setTimeout(() => {
+          if (window.instgrm && window.instgrm.Embeds) {
+            window.instgrm.Embeds.process();
+          }
+        }, 800);
+      }
+    </script>
+
+  </main>
+</div>
+
+<footer>© 2025 • Nohitto Buritto – Tüm hakları saklıdır.</footer>
+</body>
+</html>

@@ -19,61 +19,40 @@
 
 <div class="content-wrapper">
   <main>
-    <p>
-       <img class="nohut-img" src="nohutu hackledik.png" alt="Nohitto Buritto Menü">
-    </p>
 
-  
+    <img class="nohut-img" src="nohutu-hackledik.png" alt="Nohutu Hackledik">
 
     <h2>Son Paylaşımlar</h2>
-    
 
-    <div class="ig-grid" id="igEmbeds">
-     
-    </div>
-
+    <div class="ig-grid" id="igEmbeds"></div>
 
     <script async src="https://www.instagram.com/embed.js"></script>
-
     <script>
-      
-      // "https://www.instagram.com/p/DS6q8vviEsr/"
       const postUrls = [
-        // "https://www.instagram.com/p/DS6q8vviEsr/",
-        // "https://www.instagram.com/p/YYYYYYYYY/"
+        "https://www.instagram.com/p/DS6q8vviEsr/"
       ];
 
       const container = document.getElementById("igEmbeds");
 
-      if (postUrls.length === 0) {
-        container.innerHTML = `
-          <div class="ig-card">
-            <p>Henüz post linki eklenmedi. İstersen 6–12 adet post URL’si gönder, ben ekleyeyim.</p>
-            <p><a target="_blank" href="https://www.instagram.com/nohitto_buritto/">Instagram profiline git</a></p>
-          </div>
+      postUrls.forEach(url => {
+        const card = document.createElement("div");
+        card.className = "ig-card";
+        card.innerHTML = `
+          <blockquote class="instagram-media"
+            data-instgrm-permalink="${url}"
+            data-instgrm-version="14"
+            style="background:#fff; border:0; margin:0; padding:0; width:100%;">
+          </blockquote>
+          <p><a target="_blank" href="${url}">Postu Instagram’da aç</a></p>
         `;
-      } else {
-        postUrls.forEach(url => {
-          const card = document.createElement("div");
-          card.className = "ig-card";
-          card.innerHTML = `
-            <blockquote class="instagram-media"
-              data-instgrm-permalink="${url}"
-              data-instgrm-version="14"
-              style="background:#fff; border:0; margin:0; padding:0; width:100%;">
-            </blockquote>
-            <p><a target="_blank" href="${url}">Postu Instagram’da aç</a></p>
-          `;
-          container.appendChild(card);
-        });
+        container.appendChild(card);
+      });
 
-        // Embed script bazen DOM sonrası yeniden işlenmeli
-        window.setTimeout(() => {
-          if (window.instgrm && window.instgrm.Embeds) {
-            window.instgrm.Embeds.process();
-          }
-        }, 800);
-      }
+      window.setTimeout(() => {
+        if (window.instgrm && window.instgrm.Embeds) {
+          window.instgrm.Embeds.process();
+        }
+      }, 900);
     </script>
 
   </main>
